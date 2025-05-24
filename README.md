@@ -144,10 +144,44 @@ The built application will be available in the `release` directory.
 - Radix UI Components
 - OpenAI API
 
+## Supported LLM Providers
+
+Interview Coder supports multiple LLM providers. You can configure and select your preferred provider in the application's settings upon first launch, or by resetting the application (Cmd/Ctrl + R and re-authenticating).
+
+Here are the currently supported and planned providers:
+
+*   **OpenAI**:
+    *   Requires an OpenAI API key.
+    *   Enter your `sk-...` API key when prompted.
+
+*   **Local LLMs**:
+    *   Allows you to connect to a locally running LLM instance (e.g., Ollama, llamafile, Jan.ai, LM Studio).
+    *   **Base URL**: Required. This is the URL of your local LLM server (e.g., `http://localhost:11434` for Ollama, `http://localhost:8080` for llamafile).
+    *   **API Key**: Optional. Some local LLM servers might require an API key; enter it if your setup needs one.
+
+*   **GitHub Marketplace LLMs**: (Placeholder - Functionality not yet implemented)
+    *   Allows you to use LLM models provisioned through the GitHub Marketplace.
+    *   **API Key**: Required. You'll need an API key for the specific GitHub Marketplace LLM service.
+    *   **Model ID**: Optional. Depending on the service, you might need to specify a model ID.
+
+*   **Gemini**: (Planned - Functionality not yet implemented)
+    *   Will require a Google AI Studio (Gemini) API key.
+
+*   **Claude**: (Planned - Functionality not yet implemented)
+    *   Will require an Anthropic Claude API key.
+
+To select your preferred provider:
+1.  Launch the application. If it's your first time, you'll be taken to the settings screen.
+2.  If you've already configured the app, you can reset and re-configure by pressing `Cmd + R` (or `Ctrl + R` on Windows/Linux) and then `Cmd + B` (or `Ctrl + B`) to show the window. This will bring you back to the API key/provider selection screen.
+3.  Use the "Preferred LLM Provider" dropdown to select your desired LLM.
+4.  Fill in the required fields for the selected provider (API Key, Base URL, etc.). Only the fields relevant to your selected provider need to be filled.
+5.  Click "Save and Continue".
+
 ## Configuration
 
-1. On first launch, you'll need to provide your OpenAI API key
-2. The application will store your settings locally using electron-store
+1. On first launch, you'll be prompted to configure your preferred LLM provider and enter any necessary API keys or URLs (see "Supported LLM Providers" section for details).
+2. The application will store your settings locally and securely using `electron-store`.
+3. To change your configuration, you can reset the application by pressing `Cmd + R` (or `Ctrl + R`) and then `Cmd + B` (or `Ctrl + B`) to re-display the settings screen.
 
 ## Contributing
 
